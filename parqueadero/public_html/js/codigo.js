@@ -1,6 +1,5 @@
-
-$(document).ready(function(){
-    var horen=0;
+var tru=0;
+ var horen=0;
     var minen=0;
     var horsa=0;
     var minsa=0;
@@ -8,6 +7,8 @@ $(document).ready(function(){
     var totala =0;
     var totalc =0;
     var totalT=0;
+$(document).ready(function(){
+   
 
     $("#frm1").submit(function (parametro){
         parametro.preventDefault();
@@ -18,18 +19,34 @@ $(document).ready(function(){
         var pla="";
         
         horen= parseInt($("#horaentrada").val());
-        if(horen<0 || horen>23) alert("la hora aceptada debe estar entre 0 y 23");
-        
+        if(tru===0){
+            tru=1;
+        if(horen<0 || horen>23)
+        {
+            alert("la hora aceptada debe estar entre 0 y 23");
+            tru=0;
+        }        
         minen= parseInt($("#minutoentrada").val());
-        if(minen<0 || minen>59) alert("los minutos aceptadas deben estar entre 0 y 59");
-        
-        horasa= parseInt($("#horasalida").val());
-        if(horen<0 || horen>23) alert("la hora aceptada debe estar entre 0 y 23");
-        
-        minsa= parseInt($("#horasalida").val());
-        if(minen<0 || minen>59) alert("los minutos aceptadas deben estar entre 0 y 59");
-        
-        
+        if(minen<0 || minen>59)
+        {
+            alert("los minutos aceptadas deben estar entre 0 y 59");
+            tru=0;
+        }        
+        horsa= parseInt($("#horasalida").val());
+        if(horen<0 || horen>23)
+        {
+            alert("la hora aceptada debe estar entre 0 y 23");
+            tru=0;
+        }        
+        minsa= parseInt($("#minutosalida").val());
+        if(minen<0 || minen>59)
+        {
+            alert("los minutos aceptadas deben estar entre 0 y 59");
+            tru=0;
+        } 
+        }
+        else
+        {        
         veiculo= $("#lista1").val();
         pla= $("#placa").val();
         
@@ -39,14 +56,16 @@ $(document).ready(function(){
         {
             costo = tiempo* (600/60); 
             totalm = totalm + costo;
+            
                     
             $("#tabmot").append("<tr>");
             $("#tabmot").append("<td>" + pla +"  </td>");
-            $("#tabmot").append("<td>" + horen + ":" + minen + " = </td>");
-            $("#tabmot").append("<td>" + horsa + ":" + minsa + " = </td>");
-            $("#tabmot").append("<td>" + costo + "</td></tr>");   
-           $("#tabmot").append("<tr>"+"total: $"+totalm+ "</tr"> ); 
-                  
+            $("#tabmot").append("<td>" + horen + ":" + minen + "</td>");
+            $("#tabmot").append("<td>" + horsa + ":" + minsa + "</td>");
+            $("#tabmot").append("<td>" + costo + "</td></tr>"); 
+            $("#tabmot").append("<tr>");
+            
+            tru=0;
         }
         if(veiculo ==="A" ) 
         {
@@ -55,24 +74,26 @@ $(document).ready(function(){
             
             $("#tabaut").append("<tr>");
             $("#tabaut").append("<td>" + pla +"  </td>");
-            $("#tabaut").append("<td>" + horen + ":" + minen + " = </td>");
-            $("#tabaut").append("<td>" + horsa + ":" + minsa + " = </td>");
-            $("#tabaut").append("<td>" + costo + "</td></tr>"); 
+            $("#tabaut").append("<td>" + horen + ":" + minen + "</td>");
+            $("#tabaut").append("<td>" + horsa + ":" + minsa + "</td>");
+            $("#tabaut").append("<td>" + costo + "</td></tr>");
+            tru=0;
         }
         if(veiculo ==="C" ) 
         {
             costo = tiempo* (2400/60); 
             totalc = totalc + costo;
             
-            $("#tabca").append("<tr>");
-            $("#tabca").append("<td>" + pla +"  </td>");
-            $("#tabca").append("<td>" + horen + ":" + minen + " = </td>");
-            $("#tabca").append("<td>" + horsa + ":" + minsa + " = </td>");
-            $("#tabca").append("<td>" + costo + "</td></tr>"); 
+            $("#tabcam").append("<tr>");
+            $("#tabcam").append("<td>" + pla +"  </td>");
+            $("#tabcam").append("<td>" + horen + ":" + minen + "</td>");
+            $("#tabcam").append("<td>" + horsa + ":" + minsa + "</td>");
+            $("#tabcam").append("<td>" + costo + "</td></tr>");
+            tru=0;
         }
         
         totalT = totalm + totala + totalc;
-      
-
-      
-    });    
+        }
+     
+    });
+});
