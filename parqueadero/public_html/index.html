@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Parqueadero</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jquery-3.1.1.js" type="text/javascript"></script>
+        <script src="js/codigo.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <h1>Parqueadero</h1>
+        <form id="frm1">
+            <table border="1" id="tabla1">  
+                <thead>
+                    <tr>
+                        <td>tipo de veiculo</td>
+                        <td>placa</td>
+                        <td>hora de entrada</td>
+                        <td>minuto de entrada</td>
+                        <td>hora de salida</td>
+                        <td>minuto de salida</td>
+                      
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr> 
+                        <td> 
+                            <select name="lista1" id="lista1">
+                                <option value="M"> Motocicleta </option>
+                                <option value="A"> Automovil </option>
+                                <option value="C"> Camion </option>
+                            </select>
+                        </td>
+                        <td> <input type="text" id="placa"> </td>
+                        <td> <input type="number" id="horaentrada">  </td>
+                        <td> <input type="number" id="minutoentrada">  </td>
+                        <td> <input type="number" id="horasalida">  </td>
+                        <td> <input type="number" id="minutosalida">  </td>
+
+                    </tr>
+            </tbody>             
+        </table>
+            
+            <input type="submit" value="Registrar">    
+            <input type="reset" value="restableser">
+               
+        </form>     
+        
+        <hr>
+        
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Motocicletas</th>
+                    <th>Automoviles</th>
+                    <th>Camiones</th>
+                </tr>
+            </thead>
+            <tbody> 
+                
+                    <td>
+                        <table border="1">
+                            <thead>
+                            <tr>
+                                <th>Placa</th>
+                                <th>HE</th>
+                                <th>HS</th>
+                                <th>Costo </th>
+                            </tr>
+                            </thead>
+                            <tbody id="tabmot"> </tbody>
+                        </table>
+                    </td>
+                       
+                    <td>
+                        <table border="1">
+                            <thead>
+                            <tr>
+                                <th>Placa</th>
+                                <th>HE</th>
+                                <th>HS</th>
+                                <th>Costo </th>
+                            </tr>
+                            </thead>
+                            <tbody id="tabaut"> </tbody>
+                        </table>
+                    </td>
+                                      
+                    <td>
+                        <table border="1">
+                            <thead>
+                            <tr>
+                                <th>Placa</th>
+                                <th>HE</th>
+                                <th>HS</th>
+                                <th>Costo </th>
+                            </tr>
+                            </thead>
+                            <tbody id="tabcam"> </tbody>
+                            
+                        </table>
+                    </td>
+                    
+      
+            </tbody>
+        </table>
+
+
+    </body>
+    
+
+    
+</html>
